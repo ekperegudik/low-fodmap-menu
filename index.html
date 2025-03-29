@@ -4,7 +4,7 @@
 <html lang="ru">
 <head><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta charset="utf-8"/>
-<title>Low FODMAP</title>
+<title>FODMAP</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@material/web@latest/all.min.css" rel="stylesheet"/>
 <style>
@@ -84,7 +84,6 @@
       gap: 6px;
       margin-bottom: 24px;
     }
-  
 @media (max-width: 600px) {
   .tabs {
     flex-direction: column;
@@ -95,11 +94,13 @@
     text-align: center;
   }
   header {
-    flex-direction: column;
-    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    padding: 12px 16px;
   }
   header a {
-    padding: 10px 0;
+    padding: 10px 16px;
+    font-size: 16px;
   }
   body {
     padding: 0 12px;
@@ -140,7 +141,7 @@
 <a class="tab-link active" href="#menu" onclick="switchTab(event, 'menu')">🍽️ Меню</a>
 <a class="tab-link" href="#shopping" onclick="switchTab(event, 'shopping')">🛒 Покупки</a>
 </header>
-<section class="tab-content active" id="menu"><div class="tabs"><button id="btn-day-1" onclick="showDay(1)">День 1</button><button id="btn-day-2" onclick="showDay(2)">День 2</button><button id="btn-day-3" onclick="showDay(3)">День 3</button><button id="btn-day-4" onclick="showDay(4)">День 4</button><button id="btn-day-5" onclick="showDay(5)">День 5</button><button id="btn-day-6" onclick="showDay(6)">День 6</button><button id="btn-day-7" onclick="showDay(7)">День 7</button></div><h1>🍽️ Меню на неделю (Low FODMAP)</h1><div class="day-content" id="day-1"><h3>🥣 Завтрак (~370 ккал)</h3><ul>
+<section class="tab-content active" id="menu"><div class="tabs"><button id="btn-day-1" onclick="showDay(1)">День 1</button><button id="btn-day-2" onclick="showDay(2)">День 2</button><button id="btn-day-3" onclick="showDay(3)">День 3</button><button id="btn-day-4" onclick="showDay(4)">День 4</button><button id="btn-day-5" onclick="showDay(5)">День 5</button><button id="btn-day-6" onclick="showDay(6)">День 6</button><button id="btn-day-7" onclick="showDay(7)">День 7</button></div><h1>🍽️ Меню на неделю</h1><div class="day-content" id="day-1"><h3>🥣 Завтрак (~370 ккал)</h3><ul>
 <li>Яичница-глазунья (2 яйца) — жареная на антипригарной сковороде без масла</li>
 <li>Огурец, свежий (75 г)</li>
 <li>Безглютеновый хлеб (40 г)</li>
