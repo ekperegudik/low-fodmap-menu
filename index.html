@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta charset="utf-8"/>
+<title>Low FODMAP</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@material/web@latest/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #222;
+    }
+    header {
+      background: #f8f8f8;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      border-bottom: 1px solid #ddd;
+    }
+    header a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 6px 12px;
+    }
+    header a.active {
+      border-bottom: 2px solid #222;
+    }
+    section {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+    h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .day-block {
+      display: none;
+      margin-bottom: 2rem;
+    }
+    .day-block.active {
+      display: block;
+    }
+    md-outlined-segmented-button-set {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+  
+@media (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .tabs button {
+    width: 100%;
+    text-align: center;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  header a {
+    padding: 10px 0;
+  }
+  body {
+    padding: 0 12px;
+  }
+}
+</style>
+<style>
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tabs button {
+  border: none;
+  padding: 8px 16px;
+  background: #f0f0f0;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #555;
+}
+.tabs button.active {
+  background: #007BFF;
+  color: white;
+  font-weight: bold;
+}
+.day-content {
+  display: none;
+}
+.day-content.active {
+  display: block;
+}
+</style></head>
+<body>
+<header>
+<a class="tab-link active" href="#menu" onclick="switchTab(event, 'menu')">🍽️ Меню</a>
+<a class="tab-link" href="#shopping" onclick="switchTab(event, 'shopping')">🛒 Покупки</a>
+</header>
+<section class="tab-content active" id="menu"><div class="tabs"><button id="btn-day-1" onclick="showDay(1)">День 1</button><button id="btn-day-2" onclick="showDay(2)">День 2</button><button id="btn-day-3" onclick="showDay(3)">День 3</button><button id="btn-day-4" onclick="showDay(4)">День 4</button><button id="btn-day-5" onclick="showDay(5)">День 5</button><button id="btn-day-6" onclick="showDay(6)">День 6</button><button id="btn-day-7" onclick="showDay(7)">День 7</button></div><h1>🍽️ Меню на неделю (Low FODMAP)</h1><div class="day-content" id="day-1"><h3>🥣 Завтрак (~370 ккал)</h3><ul>
+<li>Яичница-глазунья (2 яйца) — жареная на антипригарной сковороде без масла</li>
+<li>Огурец, свежий (75 г)</li>
+<li>Безглютеновый хлеб (40 г)</li>
+<li>Кофе с миндальным молоком (100 мл)</li>
+</ul><h3>🍓 Перекус (~220 ккал)</h3><ul>
+<li>Киви (150 г)</li>
+<li>Орех макадамия (20 г)</li>
+</ul><h3>🍽️ Обед (~490 ккал)</h3><ul>
+<li>Куриная грудка (150 г) — запечённая с солью и тимьяном</li>
+<li>Рис отварной (190 г)</li>
+<li>Морковь (75 г)</li>
+<li>Шпинат (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍧 Полдник (~200 ккал)</h3><ul>
+<li>Клубника (75 г)</li>
+<li>Кокосовый йогурт (125 г)</li>
+<li>Грецкие орехи (10 г)</li>
+</ul><h3>🍽️ Ужин (~480 ккал)</h3><ul>
+<li>Филе лосося (120 г) — запечённое с лимоном и розмарином</li>
+<li>Картофель отварной (75 г)</li>
+<li>Кабачок тушёный (65 г)</li>
+<li>Руккола (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div></div><div class="day-content" id="day-2"><h3>🥣 Завтрак (~360 ккал)</h3><ul>
+<li>Овсяные хлопья без глютена (50 г) — сварить на рисовом молоке</li>
+<li>Рисовое молоко (200 мл)</li>
+<li>Киви (75 г)</li>
+<li>Чёрный кофе</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍓 Перекус (~220 ккал)</h3><ul>
+<li>Макадамия (20 г)</li>
+<li>Травяной чай</li>
+</ul><h3>🍽️ Обед (~510 ккал)</h3><ul>
+<li>Филе индейки (130 г) — тушёное с пряностями</li>
+<li>Гречка (135 г)</li>
+<li>Морковь (75 г)</li>
+<li>Шпинат (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍧 Полдник (~190 ккал)</h3><ul>
+<li>Клубника (75 г)</li>
+<li>Йогурт без лактозы (170 г)</li>
+</ul><h3>🍽️ Ужин (~470 ккал)</h3><ul>
+<li>Киноа (155 г)</li>
+<li>Кабачок (65 г)</li>
+<li>Филе лосося (120 г)</li>
+<li>Руккола (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div></div><div class="day-content" id="day-3"><h3>🥣 Завтрак (~370 ккал)</h3><ul>
+<li>Яичница (2 яйца)</li>
+<li>Огурец (75 г)</li>
+<li>Безглютеновый хлеб (40 г)</li>
+<li>Чёрный кофе</li>
+</ul><h3>🍓 Перекус (~220 ккал)</h3><ul>
+<li>Киви (75 г)</li>
+<li>Грецкие орехи (10 г)</li>
+</ul><h3>🍽️ Обед (~500 ккал)</h3><ul>
+<li>Куриное филе (130 г)</li>
+<li>Рис (190 г)</li>
+<li>Брокколи (75 г)</li>
+<li>Салат айсберг (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍧 Полдник (~200 ккал)</h3><ul>
+<li>Кокосовый йогурт (125 г)</li>
+<li>Голубика (125 г)</li>
+</ul><h3>🍽️ Ужин (~460 ккал)</h3><ul>
+<li>Фаршированный перец с индейкой и киноа (130 г)</li>
+<li>Кабачок (65 г)</li>
+<li>Травяной чай</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div></div><div class="day-content" id="day-4"><h3>🥣 Завтрак (~360 ккал)</h3><ul>
+<li>Омлет с зеленью и шпинатом (75 г)</li>
+<li>Безглютеновый хлеб (35 г)</li>
+<li>Чёрный кофе</li>
+</ul><h3>🍓 Перекус (~190 ккал)</h3><ul>
+<li>Мандарин (90 г)</li>
+<li>Тыквенные семечки (15 г)</li>
+</ul><h3>🍽️ Обед (~480 ккал)</h3><ul>
+<li>Филе трески (120 г)</li>
+<li>Полента (255 г)</li>
+<li>Морковь (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍧 Полдник (~170 ккал)</h3><ul>
+<li>Банан зелёный (144 г)</li>
+<li>Травяной чай</li>
+</ul><h3>🍽️ Ужин (~460 ккал)</h3><ul>
+<li>Курица (120 г)</li>
+<li>Картофель (75 г)</li>
+<li>Огурец (75 г)</li>
+</ul></div><div class="day-content" id="day-5"><h3>🥣 Завтрак (~370 ккал)</h3><ul>
+<li>Кукурузные хлопья (50 г)</li>
+<li>Миндальное молоко (200 мл)</li>
+<li>Киви (75 г)</li>
+</ul><h3>🍓 Перекус (~200 ккал)</h3><ul>
+<li>Рисовый хлебец (12 г)</li>
+<li>Арахисовая паста (25 г)</li>
+</ul><h3>🍽️ Обед (~500 ккал)</h3><ul>
+<li>Лосось (130 г)</li>
+<li>Киноа (155 г)</li>
+<li>Морковь (75 г)</li>
+<li>Руккола (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍧 Полдник (~200 ккал)</h3><ul>
+<li>Клубника (75 г)</li>
+<li>Кокосовый йогурт (125 г)</li>
+</ul><h3>🍽️ Ужин (~460 ккал)</h3><ul>
+<li>Фарш из индейки с киноа (120 г)</li>
+<li>Шпинат (75 г)</li>
+<li>Травяной чай</li>
+</ul></div><div class="day-content" id="day-6"><h3>🥣 Завтрак (~370 ккал)</h3><ul>
+<li>Яйца всмятку (2 шт)</li>
+<li>Безглютеновый хлеб (35 г)</li>
+<li>Кофе с миндальным молоком</li>
+</ul><h3>🍓 Перекус (~220 ккал)</h3><ul>
+<li>Макадамия (20 г)</li>
+<li>Киви (75 г)</li>
+</ul><h3>🍽️ Обед (~490 ккал)</h3><ul>
+<li>Индейка (130 г)</li>
+<li>Рис (190 г)</li>
+<li>Баклажан (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍧 Полдник (~180 ккал)</h3><ul>
+<li>Лимонный травяной чай</li>
+<li>Грецкие орехи (10 г)</li>
+</ul><h3>🍽️ Ужин (~470 ккал)</h3><ul>
+<li>Куриные тефтели (120 г)</li>
+<li>Кабачки (65 г)</li>
+<li>Салат айсберг (75 г)</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div></div><div class="day-content" id="day-7"><h3>🥣 Завтрак (~370 ккал)</h3><ul>
+<li>Овсянка (50 г) на рисовом молоке (200 мл)</li>
+<li>Клубника (75 г)</li>
+<li>Чёрный кофе</li>
+</ul><div class="note">🧊 Можно приготовить заранее</div><h3>🍓 Перекус (~180 ккал)</h3><ul>
+<li>Миндаль (15 г)</li>
+<li>Мандарин (45 г)</li>
+</ul><h3>🍽️ Обед (~480 ккал)</h3><ul>
+<li>Треска (130 г)</li>
+<li>Картофель (75 г)</li>
+<li>Морковь (75 г)</li>
+</ul><h3>🍧 Полдник (~200 ккал)</h3><ul>
+<li>Йогурт без лактозы (170 г)</li>
+<li>Киви (75 г)</li>
+</ul><h3>🍽️ Ужин (~460 ккал)</h3><ul>
+<li>Омлет с зеленью (2 яйца)</li>
+<li>Шпинат (75 г)</li>
+<li>Огурец (75 г)</li>
+</ul></div></section>
+<section class="tab-content" id="shopping">
+<h1>🛒 Продуктовая корзина</h1>
+<h2>🥦 Овощи и зелень</h2><ul><li><input type="checkbox"/> Огурцы — 225 г</li><li><input type="checkbox"/> Морковь — 525 г</li><li><input type="checkbox"/> Кабачки — 260 г</li><li><input type="checkbox"/> Баклажан — 75 г</li><li><input type="checkbox"/> Брокколи (соцветия) — 75 г</li><li><input type="checkbox"/> Салат айсберг — 150 г</li><li><input type="checkbox"/> Руккола — 225 г</li><li><input type="checkbox"/> Шпинат — 375 г</li><li><input type="checkbox"/> Зелень — по вкусу</li></ul><h2>🍚 Крупы, злаки, хлеб</h2><ul><li><input type="checkbox"/> Рис — 760 г</li><li><input type="checkbox"/> Гречка — 135 г</li><li><input type="checkbox"/> Киноа — 465 г</li><li><input type="checkbox"/> Полента — 255 г</li><li><input type="checkbox"/> Овсяные хлопья — 150 г</li><li><input type="checkbox"/> Кукурузные хлопья — 50 г</li><li><input type="checkbox"/> Безглютеновый хлеб — 200 г</li><li><input type="checkbox"/> Рисовые хлебцы — 25 г</li></ul><h2>🐟 Белки и мясо</h2><ul><li><input type="checkbox"/> Яйца — 14 шт</li><li><input type="checkbox"/> Куриная грудка — 450 г</li><li><input type="checkbox"/> Индейка — 520 г</li><li><input type="checkbox"/> Лосось — 370 г</li><li><input type="checkbox"/> Треска — 250 г</li><li><input type="checkbox"/> Куриные тефтели — 120 г</li></ul><h2>🥥 Молочные альтернативы и йогурты</h2><ul><li><input type="checkbox"/> Миндальное молоко — 1 л</li><li><input type="checkbox"/> Рисовое молоко — 400 мл</li><li><input type="checkbox"/> Кокосовый йогурт — 375 г</li><li><input type="checkbox"/> Лактофри-йогурт — 340 г</li></ul><h2>🍓 Фрукты и ягоды</h2><ul><li><input type="checkbox"/> Киви — 600 г</li><li><input type="checkbox"/> Клубника — 300 г</li><li><input type="checkbox"/> Банан (зелёный) — 1 шт</li><li><input type="checkbox"/> Голубика — 125 г</li><li><input type="checkbox"/> Мандарины — 135 г</li></ul><h2>🥜 Орехи и семена</h2><ul><li><input type="checkbox"/> Макадамия — 60 г</li><li><input type="checkbox"/> Грецкие орехи — 30 г</li><li><input type="checkbox"/> Миндаль — 15 г</li><li><input type="checkbox"/> Тыквенные семечки — 15 г</li></ul><h2>🧂 Остальное</h2><ul><li><input type="checkbox"/> Арахисовая паста — 25 г</li><li><input type="checkbox"/> Оливковое масло</li><li><input type="checkbox"/> Лимон</li><li><input type="checkbox"/> Травяной чай</li><li><input type="checkbox"/> Кофе — по вкусу</li></ul></section>
+<script>
+function switchTab(event, tabId) {
+  event.preventDefault();
+  document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function showDay(day) {
+  document.querySelectorAll('.day-content').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+  document.getElementById('day-' + day).classList.add('active');
+  document.getElementById('btn-day-' + day).classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  showDay(1);
+});
+</script></body>
+</html>
