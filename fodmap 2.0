@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Меню — Low FODMAP</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    header {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      background: #f8f8f8;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+    .tab-link {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .tab-link.active {
+      background: #007BFF;
+      color: #fff;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .day-dropdown {
+      text-align: center;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .day-dropdown h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .day-dropdown select {
+      padding: 6px 12px;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+    .day-content {
+      display: none;
+    }
+    .day-content.active {
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .day-dropdown {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .day-dropdown h1 {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#menu" class="tab-link active" onclick="switchTab(event, 'menu')">🍽️ Меню</a>
+    <a href="#shopping" class="tab-link" onclick="switchTab(event, 'shopping')">🛒 Покупки</a>
+  </header>
+
+  <section id="menu" class="tab-content active">
+    <div class="day-dropdown">
+      <h1>🍽️ Меню на неделю</h1>
+      <select id="day-selector" onchange="showDayDropdown(this.value)">
+        <option value="1">День 1</option>
+        <option value="2">День 2</option>
+        <option value="3">День 3</option>
+        <option value="4">День 4</option>
+        <option value="5">День 5</option>
+        <option value="6">День 6</option>
+        <option value="7">День 7</option>
+      </select>
+    </div>
+
+    <div id="day-1" class="day-content active">
+      <h2>✨ День 1</h2>
+      <p>Здесь будет меню дня 1</p>
+    </div>
+    <div id="day-2" class="day-content">
+      <h2>✨ День 2</h2>
+      <p>Здесь будет меню дня 2</p>
+    </div>
+    <!-- и так далее до дня 7 -->
+  </section>
+
+  <section id="shopping" class="tab-content">
+    <h2>🛒 Список покупок</h2>
+    <ul>
+      <li><input type="checkbox" id="item1"> Морковь</li>
+      <li><input type="checkbox" id="item2"> Шпинат</li>
+      <li><input type="checkbox" id="item3"> Индейка</li>
+    </ul>
+  </section>
+
+  <script>
+    function switchTab(event, tabId) {
+      event.preventDefault();
+      document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    function showDayDropdown(day) {
+      document.querySelectorAll('.day-content').forEach(d => d.classList.remove('active'));
+      document.getElementById(`day-${day}`).classList.add('active');
+      localStorage.setItem("selectedDay", day);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedDay = localStorage.getItem("selectedDay") || "1";
+      document.getElementById("day-selector").value = savedDay;
+      showDayDropdown(savedDay);
+
+      document.querySelectorAll('input[type="checkbox"]').forEach(box => {
+        const saved = localStorage.getItem(box.id);
+        if (saved) box.checked = saved === "true";
+
+        box.addEventListener("change", () => {
+          localStorage.setItem(box.id, box.checked);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
